@@ -2,6 +2,21 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 
 export default function App() {
+  const [phoneNumber, setPhoneNumber] = React.useState('');
+  
+  const handleContinue = () => {
+    const phoneRegex = /^0[0-9]{9}$/; // Kiểm tra định dạng số điện thoại
+
+    if(phoneNumber.trim() === '') {
+      alert('Vui lòng nhập số điện thoại');
+    } else if (!phoneRegex.test(phoneNumber)) {
+      alert('Số điện thoại không hợp lệ. Vui lòng nhập đúng định dạng.');
+    } else {
+      // Xử lý tiếp tục đăng nhập hoặc đăng ký
+      alert('Số điện thoại hợp lệ: ' + phoneNumber);
+    }
+  };
+  
   return (
     <View style={styles.container}>
       
