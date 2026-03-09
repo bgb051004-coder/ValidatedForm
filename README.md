@@ -1,4 +1,4 @@
-Bạch Gia Bảo - 23810310340
+## Bạch Gia Bảo - 23810310340
 ## Bài 6.1: Ôn tập state - useState. TextInput - Validation và Format
 ## Kết quả: 
 ![App Screenshot](assets/1.jpg)
