@@ -1,8 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-export default function App() {
+const Stack = createNativeStackNavigator();
+
+
+function LoginScreen({navigation}) {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [error, setError] = useState('');
 
@@ -36,6 +41,8 @@ export default function App() {
   const handleContinue = () => {
     const cleanPhone = phoneNumber.replace(/\s/g, '');
     alert('Số điện thoại hợp lệ: ' + cleanPhone);
+
+    navigation.navigate("Home");
   };
 
   const isValid = error === '' && phoneNumber !== '';
@@ -73,6 +80,26 @@ export default function App() {
 
       <StatusBar style="auto" />
     </View>
+  );
+}
+
+function HomeScreen() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Trang chủ</Text>
+      <Text>Chào mừng bạn đến với ứng dụng</Text>
+    </View>
+  );
+}
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
