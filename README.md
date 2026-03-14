@@ -1,5 +1,5 @@
 ## Bạch Gia Bảo - 23810310340
-Bài 6.1: Ôn tập state - useState. TextInput - Validation và Format
+Bài 6.1: Ôn tập state - useState. TextInput - Validation và Format  
 14/3 Bài 7.1: Stack Navigation
 ## Kết quả: 
 ![App Screenshot](assets/1.jpg)
